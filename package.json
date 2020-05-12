@@ -1,0 +1,21 @@
+{
+  "name": "enode",
+  "version": "1.0.0",
+  "description": "nothing",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chromedriver": "^81.0.0",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  },
+  "devDependencies": {
+    "electron": "^8.2.5",
+    "electron-packager": "^14.2.1"
+  }
+}
