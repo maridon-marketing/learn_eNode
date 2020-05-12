@@ -11,12 +11,16 @@ var db = {
 
 
 var runChrome = async function(arg1, arg2) {
+  let _service = new chrome.ServiceBuilder(chromedriver.path)
+  .build();
+  
+  let _options = new chrome.Options()
+  
   let driver = await new Builder()
   .forBrowser('chrome')
-  .setChromeOptions(
- 	 new chrome.ServiceBuilder(chromedriver.path).build()
-  )
+  .setChromeOptions(_options, _service)
   .build()
+  
   try {
     await driver.get('http://www.google.com')
     await driver.findElement(By.name('q')).sendKeys(arg1 + ' ' + arg2, Key.RETURN)
@@ -28,7 +32,7 @@ var runChrome = async function(arg1, arg2) {
     console.log(db)
     
   } finally {
-    // await driver.quit()
+    await driver.quit()
   }
 }
 
